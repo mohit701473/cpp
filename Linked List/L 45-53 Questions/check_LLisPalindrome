@@ -1,0 +1,78 @@
+//Function to check whether the list is palindrome.
+    bool isPalindrome(Node *head)
+    {
+        //Your code here
+        if(head == NULL) {
+            return false ;
+        }
+        
+        if(head -> next == NULL) {
+            return true ;
+        }
+        
+        int len = 1 ;
+        Node* dummy = head ;
+        while(dummy -> next != NULL) {
+          dummy = dummy -> next ;
+          len++ ;
+        }
+        
+        Node* temp = head ;
+    
+        int i = 1 ;
+        while(i < len/2 && len != 2) {
+            temp = temp -> next ;
+            i++ ;
+        }
+        
+        Node* head1 = NULL ;
+        
+        if(len % 2 == 0) {
+            head1 = temp -> next ;
+            
+            Node* prev = NULL ;
+            Node* curr = head1 ;
+            Node* forward = NULL ;
+              
+            while(curr != NULL) {
+                forward = curr -> next ;
+                curr -> next = prev ;
+                prev = curr ;
+                curr = forward ;
+            }
+        
+            head1 = prev ;
+            temp -> next = head1 ;
+        }
+        
+        else {
+            head1 = temp -> next -> next ;
+            
+            Node* prev = NULL ;
+            Node* curr = head1 ;
+            Node* forward = NULL ;
+              
+            while(curr != NULL) {
+                forward = curr -> next ;
+                curr -> next = prev ;
+                prev = curr ;
+                curr = forward ;
+            }
+            
+            head1 = prev ;
+            temp -> next -> next = head1 ;
+        }
+        
+        Node* temp1 = head1 ;
+        Node* temp2 = head ;
+        
+        while(temp1 != NULL) {
+            if(temp1 -> data != temp2 -> data) {
+                return false ;
+            }
+            
+            temp2 = temp2 -> next ;
+            temp1 = temp1 -> next ;
+        }
+        return true ;
+    }
