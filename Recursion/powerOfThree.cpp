@@ -11,6 +11,26 @@
 class Solution {
 public: 
 
+    // Without loop or recursion code 
+    // T.C. = O(1) 
+    bool isPowerOfThree(int n) {
+        bool ans = false ;
+
+        if(n==1) 
+            return true ;
+
+        if(n%3 != 0 || n<=0) 
+            return false ;
+
+        int x = log2(n)/ log2(3);
+
+        if(n == pow(3,x)){
+            ans = true ;
+        }
+        return ans ;
+    }
+
+
     // Recursive Code
     bool isPowerOfThree(int n) {
 
@@ -38,7 +58,7 @@ public:
     }
 
     // Itrative Code
-    bool powerOfThree(int n) {
+    bool isPowerOfThree(int n) {
 
         if(n==1)
             return true ;
