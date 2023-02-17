@@ -53,4 +53,18 @@ int main()
         printVec(v[i]) ;
     }
 
+
+    vector<int> a(0) ;
+    vector<int> b ;
+    
+    cout<<"size "<<a.size()<<endl;   // output = 0   i.e size of vector a is 0
+    cout<<"is empty "<<a.empty()<<endl;  // output = 1   i.e. vector a is empty
+    cout<<"is vector b empty "<<b.empty()<<endl;  // // output = 1   i.e. vector b is empty
+
+    vector<vector<int>> vec ;
+    vec.push_back(vector<int> ()) ;  // vector<int> ()  this is an empty vector  here we inserting an empty vector to an another vector
+    
+    cout<<"size "<<vec.size()<<endl;  // output = 1   i.e size of vector vec is 1  bcz it containing an empty vector
+    cout<<"is empty "<<vec.empty()<<endl;  // output = 0   i.e. vector  vec is not empty
+
 }
