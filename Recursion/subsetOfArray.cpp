@@ -12,10 +12,10 @@ public:
             return ;
         }
 
-        // Exclude 
+        // Exclude the element 
         getSubset(nums, output, index+1, ans) ;
 
-        // Include
+        // Include the element
         int element = nums[index] ;
         output.push_back(element) ;
         getSubset(nums, output, index+1, ans) ;
