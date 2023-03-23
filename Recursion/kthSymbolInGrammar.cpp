@@ -1,27 +1,38 @@
 class Solution {
 public:
+    void print(vector<vector<char>> str){
+        for(auto it: str){
+            for(auto it1: it)
+                cout<<it1 ;
+        }cout<<endl;
+    }
 
-    void replace(vector<vector<string>> &str, vector<string> rowStr){
+    void replace(vector<vector<char>> &str, vector<char> rowStr){
         int i=0 ;
         int size = rowStr.size() ;
-        vector<string> temp ;
+        vector<char> temp ;
+        //cout<<"rowStr: ";
         while(i<size) {
-            if(rowStr[i] == "0") {
-                temp.push_back("01") ;
+            //cout<<rowStr[i] ;
+            if(rowStr[i] == '0') {
+                temp.push_back('0') ;
+                temp.push_back('1') ;
             }
             
             else{
-                temp.push_back("10") ;
+                temp.push_back('1') ;
+                temp.push_back('0') ;
             }
+            i++ ;
         }
         str.push_back(temp) ;
         return ;
     }
 
-    void solve(vector<vector<string>> &str, int n){
-        vector<string> temp ;
+    void solve(vector<vector<char>> &str, int n){
+        vector<char> temp ;
         if(n==0) {
-            temp.push_back("0") ;
+            temp.push_back('0') ;
             str.push_back(temp) ;
             return ;
         }
@@ -32,11 +43,15 @@ public:
     }
 
     int kthGrammar(int n, int k) {
-        vector<vector<string>> str ;
+        if(k==1)
+            return 0 ;
+        vector<vector<char>> str ;
         solve(str, n) ;
-
+        // cout<<"final str: "<<endl;
+        // print(str) ;
+        //cout<<endl;
         int ans = 1 ;
-        if(str[n-1][k-1] == "0") 
+        if(str[n-1][k-1] == '0') 
             ans = 0 ;
 
         return ans ;
