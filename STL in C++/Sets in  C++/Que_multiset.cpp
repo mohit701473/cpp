@@ -6,7 +6,7 @@ int main() {
 	int T ;
 	cin>> T ;
 	while(T--){
-		int N, K ;
+		int N, K ;>
 		cin>> N >> K ;
 
 		multiset<long long> bag ;
