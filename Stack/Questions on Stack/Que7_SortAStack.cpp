@@ -1,8 +1,9 @@
 // Sort a stack
-
-// Apporach 1 : Itrative Method
 // T.C. = O(n*n) 
 // S.C. = O(n)
+
+
+// Apporach 1 : Itrative Method
 void SortedStack :: sort()
 {
    //Your code here
