@@ -1,100 +1,95 @@
 #include<iostream>
 using namespace std ;
 
-
-class Node {
+class Node{
     public:
     int data ;
     Node* next ;
 
-    //constructor 
-    Node (int d) {
-        this -> data = d ;
+    // Constructor
+    Node(int data){
+        this -> data = data ;
         this -> next = NULL ;
     }
 };
 
-class stack {
+class stack{
+    public:
+    int len ;
     Node* head ;
 
-    public:
-    stack() {
+    // Constructor
+    stack(){
+        len = 0 ;
         head = NULL ;
-    }
+    } 
 
-    void push(int d) {
-        Node* temp = new Node(d) ;
-
-        if(!temp) {
-            cout<<"stack overflow"<<endl;
-            exit(1) ;
+    void push(int val){
+        Node* temp = new Node(val) ;
+        if(head == NULL){
+            head = temp ;
+            len++ ;
         }
 
-        temp -> next = head ;
-        head = temp ;
-    }
-
-    void pop() {
-        Node* temp = head ;
-
-        if(head == NULL) {
-            cout<<"stack under flow"<<endl;
-            exit(1) ;
+        else{
+            temp -> next = head ;
+            head = temp ;
+            len++ ;
         }
-
-        head = head -> next ;
-        temp -> next = NULL ;
-
-        free(temp) ;
         
     }
 
+    void pop() {
+
+        if(head == NULL){
+            cout<<"stack underflow"<<endl;
+            exit(0) ;
+        }
+
+        Node* temp = head ;
+        head = head -> next ;
+        temp -> next = NULL ;
+        len-- ;
+        delete temp ;
+    }
+
     int top() {
-        if(head == NULL) {
-            cout<<"stack under flow1"<<endl;
-            exit(1) ;
+        if(head == NULL){
+            cout<<"stack underflow"<<endl;
+            exit(0) ;
         }
 
         return head -> data ;
     }
 
-    bool empty() {
-        if(head == NULL) {
-            return true ;
-        }
+    int size(){
+        return len ;
+    }
 
-        return false ;
+    bool empty(){
+        if(len == 0)
+            return 1 ;
+        
+        return 0 ;
     }
 };
 
 
-int main() {
+int main()
+{
+    stack s ;
+    s.push(10) ;
+    s.push(12) ;
+    s.push(2) ;
 
-    stack st ;
-    st.push(2) ;
-    st.push(3) ;
-    st.push(7) ;
-    st.push(6) ;
+    cout<<s.top()<<endl;
+    cout<<s.empty()<<endl;
+    cout<<s.size()<<endl;
 
-    cout<<st.top()<<endl;
-    st.pop() ;
-    cout<<st.empty()<<endl;
+    s.pop() ;
+    s.pop() ;
 
-    cout<<st.top()<<endl;
-    st.pop() ;
-    cout<<st.empty()<<endl;
-
-    cout<<st.top()<<endl;
-    st.pop() ;
-    cout<<st.empty()<<endl;
-
-    cout<<st.top()<<endl;
-    st.pop() ;
-    cout<<st.empty()<<endl;
-
-    // cout<<st.top()<<endl;
-    // st.pop() ;
-    // cout<<st.empty()<<endl;
-    
-    
+    cout<<s.top()<<endl;
+    cout<<s.empty()<<endl;
+    cout<<s.size()<<endl;
 }

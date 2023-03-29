@@ -1,70 +1,75 @@
 #include<iostream>
 using namespace std ;
 
-class stack {
+class stack{
     public:
-    int *arr = NULL; 
-    int top ;
-    int size ;
+    int i, j, len ;
+    int* arr ;
 
     // Constructor
-    stack(int size) {
-        this -> size = size ;
-        arr = new int[size] ;
-        top = -1 ;
-    }
- 
-
-
-    void push(int d) {
-        if(size - top > 1) {
-            top++ ;
-            arr[top] = d ;
-        }
-        else{
-            cout<<"stack overflow"<<endl;
-        }
+    stack() {
+        i = 0 ;
+        j = -1 ;
+        len = 0 ;
+        arr = new int[100000] ;
     }
 
-    void pop() {
-        if(top >= 0) {
-            top-- ;
+    void push(int data) {
+
+        if(len >= 100000){
+            cout<<"Stack Overflow"<<endl ;
+            exit(1) ;
         }
 
-        else{
-            cout<<"stack underflow"<<endl;
-        }
+        arr[i] = data ;
+        i++ ;
+        j++ ;
+        len++ ;
     }
 
-    int peek() {
-        if(top >=0 && top < size) {
-            return arr[top] ;
+    void pop(){
+        if(i==0){
+            cout<<"Stack Underflow"<<endl ;
+            exit(1) ;
         }
-        
-        cout<<"stack is empty"<<endl;
-        
+
+        i-- ;
+        j-- ;
+        len-- ;
     }
 
-    bool empty() {
-        if(top == -1) {
-            return true ;
+    int top(){
+        if(i==0){
+            cout<<"Stack Underflow"<<endl ;
+            exit(1) ;
         }
-        else {
-            return false ;
-        }
+
+        return arr[j] ;
+    }
+
+    int size(){
+
+        return len ;
+    }
+
+    bool empty(){
+        if(i==0)
+            return 1 ;
+
+        return 0 ;
     }
 };
 
-
 int main() {
+    stack s;
+    s.push(10) ;
+    s.push(1) ;
+    s.push(12) ;
+    s.push(1) ;
+    cout<<s.top() <<endl;
+    s.pop() ;
+    cout<<s.top() <<endl;
+    cout<<s.size() <<endl;
+    cout<<s.empty() <<endl;
 
-    stack st(4) ; 
-    st.push(2) ;
-    st.push(3) ;
-    st.push(1) ;
-
-    for(int i = 0 ; i<3 ; i++) {
-        cout<<st.peek()<<" ";
-        st.pop() ;
-    }
 }
