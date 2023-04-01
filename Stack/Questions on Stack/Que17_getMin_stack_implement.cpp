@@ -1,72 +1,76 @@
-// Get minimum element from stack (gfg)
+// Design a stack that supports getMin() in O(1) time and O(1) extra space
 
-// T.C. = O(1) 
-// S.C. = O(n) 
-class solutio{
 
-    int minEle;
-        stack<int> s;
+// Approch 1
+// T.C. = O(1) ;
+// S.C = O(n)  bcz we use another array for storing minimum element for every size of the stack
+class SpecialStack {
+
+    // Define the data members.
+
+    /*----------------- Public Functions of SpecialStack -----------------*/
+    public:
+    int *arr1 , *arr2 ;
+    int it ;
+
+    SpecialStack(){
+        arr1 = new int[100000000] ;
+        arr2 = new int[100000000] ;
+        it = -1 ;
+    }
+
         
-        public:
-        
-        stack<int> st ;
-        int min = INT_MAX ;
-        
-        /*returns min element from stack*/
-        int getMin(){
-            
-            if(s.empty()){
-                return -1 ;
-                
-            }
-            
-            if(!st.empty() && !s.empty()){
-                return st.top() ;
-            }
-            
+    void push(int data) {
+
+        it++ ;
+
+        if(it == 0 ){
+            arr1[it] = data ;
+            arr2[it] = data ;
         }
-        
-        /*returns poped element from stack*/
-        int pop(){
-            
-            if(s.empty()) {
-                return -1 ;
+
+        else{
+            arr1[it] = data ;
+            if(arr2[it-1] > data){
+                arr2[it] = data ;
             }
-            
             else{
-                int num = s.top() ;
-                s.pop() ;
-                if(!st.empty()){
-                    st.pop() ;
-                }
-                
-                return num ;
-            }
-            
-        }
-        
-        /*push element x into the stack*/
-        void push(int x){
-            
-            if(s.empty()) {
-                
-                st.push(x) ;
-                s.push(x) ;
-            }
-            
-            else {
-                if(x < st.top()) {
-                    
-                    st.push(x) ;
-                    s.push(x) ;
-                }
-                else{
-                    st.push(st.top()) ;
-                    s.push(x) ;
-                }
+                arr2[it] = arr2[it-1] ;
             }
         }
 
+    }
+
+    int pop() {
+        if(it == -1)
+            return -1 ;
+
+        int val = arr1[it] ;
+        it-- ;
+        return val ;
+        
+    }
+
+    int top() {
+        if(it == -1)
+            return -1 ;
+
+        return arr1[it] ;
+    }
+
+    bool isEmpty() {
+        if(it == -1)
+            return true ;
+
+        return false ;
+    }
+
+    int getMin() {
+        if(it == -1)
+            return -1 ;
+
+        return arr2[it] ;
+    }  
 };
 
 
@@ -75,6 +79,7 @@ class solutio{
 // S.C. = O(1)
 // Imp formula in push "val = 2*curr - mini"   
 // Imp formula in pop " val = 2*mini - curr" here curr = s.top()
+// these two formulas used here taki hum current minimum ka use krke previos minimum find kr ske 
 class solution{
     
     int minEle;

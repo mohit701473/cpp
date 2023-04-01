@@ -2,6 +2,8 @@
 
 
 // Approch 1
+// T.C. = O(1) 
+// S.C. = O(S+N)
 // In this approch memory utilization is not proper
 #include <bits/stdc++.h> 
 class NStack
@@ -63,6 +65,8 @@ public:
 
 
 // Approch 2
+// T.C. = O(1) 
+// S.C. = O(S+N)
 // memory utilization is optimal
 #include <bits/stdc++.h> 
 class NStack
