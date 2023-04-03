@@ -28,7 +28,7 @@ vector<long long> printFirstNegativeInteger(long long int A[], long long int N, 
 // Approch 2 using doubley ended queue
 // Expected Time Complexity: O(N)
 // Expected Auxiliary Space: O(K)
-
+// This is not the optimal approch of this question
 vector<long long> printFirstNegativeInteger(long long int A[], long long int N, long long int K) {
                                                  
         deque<long long int> dq ;
@@ -53,7 +53,7 @@ vector<long long> printFirstNegativeInteger(long long int A[], long long int N, 
         for(int i=K ; i<N ; i++){
             
             // Removal 
-            if(!dq.empty() && i - dq.front() >= K){
+            if(!dq.empty() && i - dq.front() >= K){  // i - dq.front() >= K  it means that jo bhi cheej front m h ky vo K size window ya K size sub array m aati h ya nhi 
                 dq.pop_front() ;
             }
             
