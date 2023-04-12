@@ -31,3 +31,76 @@ class Solution {
         return ans ;
     }
 };
+
+
+// Approch 2
+// T.C. = O(n)
+// S.C. = O(height) bcz 
+class Solution {
+  public:
+  
+    pair<int, int> diameterFast(Node* root){
+        // base case 
+        if(root == NULL){
+            pair<int, int> p = make_pair(0,0) ;
+            return p ;
+        }
+        
+        pair<int, int> left = diameterFast(root -> left) ;
+        pair<int, int> right = diameterFast(root -> right) ;
+        
+        int op1 = left.first ;
+        int op2 = right.first ;
+        int op3 = left.second + right.second + 1;
+        
+        pair<int, int> ans ;
+        ans.first = max(op1, max(op2, op3)) ; // this is bcz first store maximum diameter
+        ans.second = max(left.second, right.second) + 1 ;
+        
+        return ans ;
+        
+    }
+  
+    // Function to return the diameter of a Binary Tree.
+    int diameter(Node* root) {
+       
+       return diameterFast(root).first ;
+    }
+};
+
+
+
+// Leet Code
+// The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+// The length of a path between two nodes is represented by the number of edges between them.
+
+class Solution {
+public:
+
+   pair<int, int> diameterFast(TreeNode* root){
+        // base case 
+        if(root == NULL){
+            pair<int, int> p = make_pair(0,0) ;
+            return p ;
+        }
+        
+        pair<int, int> left = diameterFast(root -> left) ;
+        pair<int, int> right = diameterFast(root -> right) ;
+        
+        int op1 = left.first ;
+        int op2 = right.first ;
+        int op3 = left.second + right.second  ;  // int op3 = left.second + right.second + 1; not valid
+        
+        pair<int, int> ans ;
+        ans.first = max(op1, max(op2, op3)) ; // this is bcz first store maximum diameter
+        ans.second = max(left.second, right.second) + 1 ;
+        
+        return ans ;
+        
+    }
+
+    int diameterOfBinaryTree(TreeNode* root) {
+        
+        return diameterFast(root).first ;
+    }
+};
