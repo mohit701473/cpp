@@ -12,6 +12,8 @@ struct Node
 };
 */
 
+// For finding the height of the BT we mainy use recursive method bcz this method is quite optimal in S.C. 
+
 // Approch 1 Recursive method
 // T.C. = O(n) bcz we traverse each node at once and we can't reduce this T.C. bcz we have to traverse all Nodes 
 // S.C. = O(height) bcz in recursive call stack no of call is equal to the height of the tree but in worst case S.C. = O(n) when tree is a skewed tree
@@ -69,3 +71,4 @@ public:
         return height ;
     }
 };
+
