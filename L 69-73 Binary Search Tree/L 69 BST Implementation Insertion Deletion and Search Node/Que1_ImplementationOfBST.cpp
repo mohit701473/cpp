@@ -78,11 +78,53 @@ void levelOrderTraversal(Node* root){
     }
 }
 
+void inorder(Node* root){
+    if(root == NULL)
+        return ;
+
+    inorder(root -> left) ;
+    cout<<root -> data<< " " ;
+    inorder(root -> right) ;
+}
+
+void preorder(Node* root){
+    if(root == NULL)
+        return ;
+
+    cout<<root -> data<< " " ;
+    preorder(root -> left) ;
+    preorder(root -> right) ;
+}
+
+
+void postorder(Node* root){
+    if(root == NULL)
+        return ;
+
+    postorder(root -> left) ;
+    postorder(root -> right) ;
+    cout<<root -> data<< " " ;
+}
+
+
 int main(){
     Node* root = NULL ;
     cout<<"Enter data to create BST"<<endl;
     takeInput(root) ;
 
-    cout<<"Level order traversal of BST"<<endl;
+    cout<<"Print Level order traversal of BST"<<endl;
     levelOrderTraversal(root) ;
+
+    cout<<"Print Inorder traversal of BST"<<endl;
+    inorder(root) ;
+    cout<<endl;
+
+    cout<<"Print Preorder traversal of BST"<<endl;
+    preorder(root) ;
+    cout<<endl;
+
+    cout<<"Print Postorder traversal of BST"<<endl;
+    postorder(root) ;
+    cout<<endl;
 }
+
