@@ -27,8 +27,8 @@ public:
 
 
 // Approch - 2 using priority queue
-// T.C. = 
-// S.C. = 
+// T.C. = O(N^2log(K))
+// S.C. = O(K)
 class Solution{
 public:
     int kthLargest(vector<int> &Arr,int N,int K){

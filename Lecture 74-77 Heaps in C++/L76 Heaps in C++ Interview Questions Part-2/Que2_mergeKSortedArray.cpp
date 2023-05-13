@@ -39,7 +39,7 @@ class Solution
         vector<int> ans ;
         
         // step -> 2 insert minHeap.to() into ans array until we are not traverse all the element in given 2D vector
-        // now remainig element to be traversed = N*K - K [ N*K = total element & K elments are above traversed] but is similira to the N*K
+        // now remainig element to be traversed = N*K - K [N*K = total element & K elments are above traversed] but is similira to the N*K
         // T.C. = O(N*KlogK)
         while(!minHeap.empty()){ // by this we traverse all the elements
             
