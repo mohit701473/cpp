@@ -1,0 +1,1 @@
+new TrieNode('\0')
