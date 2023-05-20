@@ -59,3 +59,34 @@ class Solution
         
     }
 };
+
+
+
+// Approch -> 3 Bottom-Up Approch(Tabulation Method)
+// T.C. => O(n)
+// S.C. => O(n)
+class Solution
+{
+    public:
+    
+    int FindMaxSum(int arr[], int n)
+    {
+        vector<int> dp(n, -1) ;
+        
+        dp[0] = arr[0] ;
+        
+        int i=1 ;
+        
+        while(i < n){
+            int incl = arr[i] + dp[i-2] ;
+            int excl = dp[i-1] + 0 ;
+            
+            dp[i] = max(incl, excl) ;
+            i++ ;
+        }
+        
+        return dp[n-1] ;
+        
+        
+    }
+};

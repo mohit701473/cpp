@@ -66,7 +66,7 @@ public:
 
 
 
-// Approch -> 2 Bottom-Up Approch(Tabulation Method)
+// Approch -> 3 Bottom-Up Approch(Tabulation Method)
 // T.C. => O(n)
 // S.C. => O(n)
 class Solution{
@@ -91,7 +91,7 @@ public:
 
 
 
-// Approch -> 2 Space Optimization
+// Approch -> 4 Space Optimization
 // T.C. => O(n)
 // S.C. => O(1)
 class Solution{
