@@ -90,3 +90,34 @@ class Solution
         
     }
 };
+
+
+
+// Approch -> 4 Space Optimization
+// T.C. => O(n)
+// S.C. => O(1)
+class Solution
+{
+    public:
+    
+    int FindMaxSum(int arr[], int n)
+    {
+        int prev1 = 0 ;
+        int prev2 = arr[0] ;
+        
+        int i=1 ;
+        
+        while(i < n){
+            int incl = arr[i] + prev1 ;
+            int excl = prev2 + 0 ;
+            
+            prev1 = prev2 ;
+            prev2 = max(incl, excl) ;
+            i++ ;
+        }
+        
+        return prev2 ;
+        
+        
+    }
+};
