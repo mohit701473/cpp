@@ -67,7 +67,7 @@ public:
 
 
 
-// Approch - 2  Recursive solution
+// Approch - 3  Recursive solution
 // T.C. = O(N) 
 // S.C. = O(N)  bcz auxilary stack is use in recursion
 class Solution {
@@ -99,3 +99,42 @@ public:
         return head ;
     }
 };
+
+
+
+
+// Approch - 4  Recursive Backtracking
+// T.C. = O(N) 
+// S.C. = O(N)  bcz auxilary stack is use in recursion
+class Solution {
+    void reverseRecursive(ListNode* curr, ListNode* prev, ListNode* &head){
+
+        if(curr == NULL){
+            head = prev ;
+            return ;
+        }
+
+        prev = curr ;
+        curr = curr -> next ;
+
+        reverseRecursive(curr, prev, forward, head) ;
+
+        if(curr != NULL)
+            curr -> next = prev ;
+    }
+public: 
+    ListNode* reverseList(ListNode* head) {
+        if(head == NULL)
+            return head ;
+
+        ListNode* curr = head ;
+        ListNode* prev = NULL ;
+        ListNode* temp = head ;
+
+        reverseRecursive(curr, prev, head) ;
+        temp -> next = NULL ;
+
+        return head ;
+    }
+};
+
