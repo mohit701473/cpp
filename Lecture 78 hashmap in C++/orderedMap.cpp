@@ -58,7 +58,7 @@ int main(){
 
 
 // (5) Erase any key form map
-    m.erase("Mohit") ;
+    m.erase("Mohit") ;  // T.C. = O(log(n))
     cout<< m.size() << endl ; 
 
 
