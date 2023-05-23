@@ -27,12 +27,12 @@ bool detectLoop(Node* head) {
     // S.C = O(n) bcz we store every Node in map which required space 
 }
 
-bool floydCycleDetection(Node* head)
+Node* floydCycleDetection(Node* head)
     {
         // your code here
         
         if(head == NULL || head -> next == NULL) {
-            return false ;
+            return NULL ;
         }
         
         Node* slow = head ;
@@ -43,11 +43,11 @@ bool floydCycleDetection(Node* head)
             fast = fast -> next -> next ;
             
             if(fast == NULL || fast -> next == NULL) {
-                return false ;
+                return NULL ;
             }
         }while(slow != fast) ;
         
-        return true ;
+        return slow ;
 
     // T.C = O(n) bcz we traverse all Node at lest one time 
     // S.C = O(1) 
