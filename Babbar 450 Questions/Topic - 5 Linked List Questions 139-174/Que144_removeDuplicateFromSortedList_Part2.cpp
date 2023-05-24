@@ -1,4 +1,5 @@
 // LeetCode Que.82 Remove Duplicates from Sorted List II
+https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 /*
 Given the head of a sorted linked list, delete all nodes that have duplicate numbers, 
 leaving only distinct numbers from the original list. Return the linked list sorted as well.
@@ -11,8 +12,7 @@ Example 2:
 Input: head = [1,1,1,2,3]
 Output: [2,3]
 */
-// Question Link
-https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
+
 
 
 
@@ -60,6 +60,52 @@ public:
 
             curr = temp ;
         }
+
+        return newHead ;
+    }
+};
+
+
+
+
+// Approch - 2
+// T.C. = O(N)
+// S.C. = O(1)
+class Solution {
+
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(head == NULL || head -> next == NULL)
+            return head ;
+
+        ListNode* curr = head ;
+        ListNode* prev = NULL ;
+        ListNode* newHead = NULL ;
+
+        while(curr != NULL && curr -> next != NULL){
+            ListNode* temp = curr -> next ;
+            
+            if(curr -> val == temp -> val){
+
+                while(temp != NULL && temp -> val == curr -> val)
+                    temp = temp -> next ;
+
+                if(prev != NULL)
+                    prev -> next = temp ;
+
+                curr = temp ;
+            }
+
+            else{
+                if(newHead == NULL)
+                    newHead = curr ;
+                prev = curr ;
+                curr = temp ;
+            }
+        }
+
+        if(curr != NULL && newHead == NULL)
+            newHead = curr ;
 
         return newHead ;
     }
