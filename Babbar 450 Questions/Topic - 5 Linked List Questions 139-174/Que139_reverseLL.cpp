@@ -117,7 +117,7 @@ class Solution {
         prev = curr ;
         curr = curr -> next ;
 
-        reverseRecursive(curr, prev, forward, head) ;
+        reverseRecursive(curr, prev, head) ;
 
         if(curr != NULL)
             curr -> next = prev ;
