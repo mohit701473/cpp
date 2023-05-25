@@ -68,3 +68,66 @@ class Solution
         return head ;
     }
 };
+
+
+
+// Approch - 1 reverse LL + Itration
+// T.C. = O(N)
+// S.C. = O(1) 
+class Solution
+{
+    public:
+    
+    Node* reverseLL(Node* head){
+        if(head == NULL)
+            return head ;
+
+        Node* curr = head ;
+        Node* prev = NULL ;
+        Node* forward = NULL ;
+
+        while(curr != NULL){
+            forward = curr -> next ;
+            curr -> next = prev ;
+            prev = curr ;
+            curr = forward ;
+        }
+
+        head = prev ;
+        
+        return head ;
+    }
+    
+    Node* addOne(Node *head) 
+    {
+        head = reverseLL(head) ;
+        
+        Node* curr = head ;
+        
+        if(curr -> data + 1 == 10){
+            curr -> data = 10  ;
+            
+            while(curr -> next != NULL){
+                
+                if(curr -> data == 10){
+                    curr -> data = 0 ;
+                    curr -> next -> data += 1 ;
+                }
+                else break ;
+                
+                curr = curr -> next ;
+            }
+            
+            if(curr -> next == NULL && curr -> data == 10){
+                    curr -> data = 0 ;
+                    Node* temp = new Node(1) ;
+                    curr -> next = temp ;
+                }
+            
+        }
+        
+        else curr -> data += 1 ;
+        
+        return reverseLL(head) ;
+    }
+};
