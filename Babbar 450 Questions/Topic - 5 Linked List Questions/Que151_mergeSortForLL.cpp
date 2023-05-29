@@ -8,7 +8,7 @@ https://leetcode.com/problems/sort-list/description/
 
 // Approch - 1  
 // T.C. = O(Nlog(N)) 
-// S.C. = O(N) 
+// S.C. = O(log(N)) 
 class Solution {
 
     ListNode* getMiddle(ListNode* head) {
