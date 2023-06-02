@@ -80,3 +80,48 @@ ListNode* Solution::rotateRight(ListNode* A, int B) {
 
     return A ;
 }
+
+
+
+// Optimization in Approch - 1
+pair<int, ListNode*> getLengthAndLastNode(ListNode* head){
+    int count = 1 ;
+    ListNode* curr = head ;
+    while(curr -> next != NULL){
+        count++ ;
+        curr = curr -> next ;
+    }
+    return {count, curr} ;
+}
+
+ListNode* Solution::rotateRight(ListNode* A, int B) {
+    
+    pair<int, ListNode*> p = getLengthAndLastNode(A) ;
+    int len = p.first ;
+    ListNode* lastNode = p.second ;
+    
+    int K = B ;
+    
+    if( K > len) 
+        K = K % len ;
+    
+    if(K == len || K == 0) 
+        return A ;
+        
+    int i = 0 ;
+    ListNode* curr = A ;
+    ListNode* prev = NULL ;
+    
+    while(i < len - K ){
+        prev = curr ;
+        curr = curr -> next ;
+        i++ ;
+    }
+    
+    prev -> next = NULL ;
+    lastNode -> next = A ;
+    A = curr ;
+
+    return A ;
+}
+
