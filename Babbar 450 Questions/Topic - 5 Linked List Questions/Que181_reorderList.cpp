@@ -1,8 +1,8 @@
-https://www.interviewbit.com/problems/reorder-list/
 
 
 //------------------------------------------------------------   Solution    ----------------------------------------------------------------------
 
+https://www.interviewbit.com/problems/reorder-list/
 
 // Approch - 1
 // T.C. = O(N)
@@ -59,6 +59,7 @@ ListNode* mergedList(ListNode* l1, ListNode* l2){
 }
 
 ListNode* Solution::reorderList(ListNode* A) {
+    
     if(A == NULL || A -> next == NULL)
         return A ;
         
@@ -75,3 +76,40 @@ ListNode* Solution::reorderList(ListNode* A) {
     // step -> 3: merge these two list
     return mergedList ;
 }
+
+
+
+https://leetcode.com/problems/reorder-list/description/
+
+// Approch - 2
+// T.C. = O(N^2)
+// S.C. = O(1)
+class Solution {
+public:
+    void reorderList(ListNode* head) {
+        if(head -> next == NULL)
+            return ;
+
+        ListNode* curr = head ;
+
+        while(curr -> next != NULL){
+            ListNode* temp = curr -> next ;
+            ListNode* prev = NULL ;
+
+            while(temp -> next != NULL){
+                prev = temp ;
+                temp = temp -> next ;
+            }
+
+            if(prev != NULL){
+                temp -> next = curr -> next ;
+                curr -> next = temp ;
+                curr = temp -> next ;
+                prev -> next = NULL ;
+            }
+
+            else break ;
+        }
+
+    }
+};
