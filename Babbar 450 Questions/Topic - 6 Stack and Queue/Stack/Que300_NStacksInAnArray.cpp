@@ -7,7 +7,7 @@ https://www.codingninjas.com/codestudio/problems/n-stacks-in-an-array_1164271?le
 class NStack
 {
     int *arr, *tops, *links, *freeIndexs ;
-    int freeSpot , size;
+    int freeSpot ;
 public:
     // Initialize your constructor
     NStack(int N, int S)
@@ -17,7 +17,6 @@ public:
         links = new int[S] ;
         freeIndexs = new int[S] ; // every index of this array will indicate the next freeSpot
         freeSpot = 0 ;
-        size = S ;
 
         for(int i=0 ; i<N ; i++){
             tops[i] = -1 ;
