@@ -58,3 +58,28 @@ class stack{
     }
 };
 
+int main()
+{
+    stack st ;
+    st.push(20) ;
+    st.push(2) ;
+    st.push(30) ;
+
+    cout<<"stack top -> "<<st.top()<<endl;
+    cout<<"stack size -> "<<st.size()<<endl;
+    cout<<"stack is empty -> "<<st.empty()<<endl;
+
+    st.pop() ;
+    st.pop() ;
+
+    cout<<"stack top -> "<<st.top()<<endl;
+    cout<<"stack size -> "<<st.size()<<endl;
+    cout<<"stack is empty -> "<<st.empty()<<endl;
+
+    st.pop() ;
+
+    cout<<"stack top -> "<<st.top()<<endl;
+    cout<<"stack size -> "<<st.size()<<endl;
+    cout<<"stack is empty -> "<<st.empty()<<endl;
+
+}
