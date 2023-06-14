@@ -77,8 +77,8 @@ class SpecialStack {
 
 // T.C. = O(1)
 // S.C. = O(1)
-// Imp formula in push "val = 2*curr - mini"   
-// Imp formula in pop " val = 2*mini - curr" here curr = s.top()
+// Imp formula in push "val = 2*curr - mini"  here curr = x in the push function
+// Imp formula in pop "val = 2*mini - curr" here curr = s.top()
 // these two formulas used here taki hum current minimum ka use krke previos minimum find kr ske 
 class solution{
     
@@ -91,38 +91,30 @@ class solution{
     
        /*returns min element from stack*/
        int getMin(){
-           
-           if(s.empty()){
+           if(s.empty())
                return -1 ;
-               
-           }
            
            return mini ;
        }
        
        /*returns poped element from stack*/
        int pop(){
-           
-           if(s.empty()) {
+           if(s.empty()) 
                return -1 ;
-           }
            
-           int curr = s.top() ;
-           s.pop() ;
-           if(curr > mini){
-               
-               return curr ;
-           }
-           
-           else {
-               int prevMin = mini ;
-               int val = 2*mini - curr ;
-               mini = val ;
-               
-               return prevMin ;
-           }
-    
+            int curr = s.top() ;
+            s.pop() ;
 
+            if(curr > mini)  
+                return curr ;
+            
+            else{
+                int prevMin = mini ;
+                int val = 2*mini - curr ;
+                mini = val ;
+                
+                return prevMin ;
+            }
        }
        
        /*push element x into the stack*/
@@ -130,8 +122,8 @@ class solution{
           // int curr = x ;
            
            if(s.empty()) {
-              s.push(x) ;
-              mini = x ;
+                s.push(x) ;
+                mini = x ;
            }
            
            else {
