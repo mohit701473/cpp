@@ -51,3 +51,80 @@ public:
         return len ;
     }
 };
+
+
+
+
+
+
+// Approch -> 2: Using One Stack
+// T.C. = O(N)
+// S.C. = O(N)
+class Solution {
+  public:
+    int findMaxLen(string s) {
+        
+        int len = 0 ;
+        stack<int> indexStack ;
+        indexStack.push(-1) ;
+        
+        for(int i=0 ; i<s.length() ; i++){
+            char ch = s[i] ;
+            
+            if(ch == '('){
+                // charStack.push(ch) ;
+                indexStack.push(i) ;
+            }
+            
+            else{
+                indexStack.pop() ;
+                
+                if(indexStack.empty())
+                    indexStack.push(i) ;
+                else
+                    len = max(len, i-indexStack.top()) ;
+            }
+        }
+        return len ;
+    }
+};
+
+
+
+
+
+// Approch -> 3: Two Pointer Approch
+// T.C. = O(N)
+// S.C. = O(1)
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        int left = 0, right = 0, ans = 0, n = s.size();
+ 
+        for(int i = 0; i < n; ++i){
+            if(s[i] == '(')
+                ++left;
+            else
+                ++right;
+            if(left == right)
+                ans = max(ans, 2 * right);
+            else if(right > left)
+                left = right = 0;
+        }
+    
+        left = right = 0;
+    
+        for(int i = n - 1; i >= 0; --i){
+            if(s[i] == '(')
+                ++left;
+            else
+                ++right;
+            if(left == right)
+                ans = max(ans, 2 * right);
+            else if(left > right)
+                left = right = 0;
+        }
+    
+        return ans;
+    }
+};
