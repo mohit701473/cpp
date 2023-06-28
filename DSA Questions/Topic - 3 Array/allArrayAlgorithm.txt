@@ -1,0 +1,4 @@
+(1) Moore's Voting Algorithm
+(2) Ditch National Flag Algorithm
+(3) Kadane's Algorith
+
