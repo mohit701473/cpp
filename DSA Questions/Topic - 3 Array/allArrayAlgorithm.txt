@@ -1,4 +1,4 @@
 (1) Moore's Voting Algorithm
-(2) Ditch National Flag Algorithm
+(2) Ditch National Flag Algorithm  -> for finding Majority in array
 (3) Kadane's Algorith
 
