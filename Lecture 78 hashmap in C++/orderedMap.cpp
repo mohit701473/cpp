@@ -39,7 +39,7 @@ int main(){
 
 // (2) Search key in map
     // way -1
-    cout<<m["Mohit"] << endl ;
+    cout<<m["Mohit"] << endl ; 
 
     // way -2
     cout<<m.at("Mohit") << endl ;

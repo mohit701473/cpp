@@ -14,7 +14,10 @@ void print(multiset<string> &s){
 
 int main()
 {
-    multiset<string> s ; // Decleration of multiset and this is a multi set and store values in sorted order
+// Multiset allows us to insert multiple keys unlike set will store unique keys only and multiset implementation si also done using red black tree
+
+    // Decleration of multiset
+    multiset<string> s ; 
 
     s.insert("abc") ;  // T.C. = O(log(n))  for inserting an element in  multiset
     s.insert("zxc") ;
