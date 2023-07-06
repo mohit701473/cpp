@@ -1,4 +1,4 @@
-(1) Moore's Voting Algorithm
-(2) Ditch National Flag Algorithm  -> for finding Majority in array
+(1) Moore's Voting Algorithm -> for finding Majority in array
+(2) Ditch National Flag Algorithm -> Maximum Subarray Sum in an Array
 (3) Kadane's Algorith
 
