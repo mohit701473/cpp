@@ -1,4 +1,5 @@
 (1) LeetCode -> 875. Koko Eating Bananas
     https://leetcode.com/problems/koko-eating-bananas/description/
 
-(2) 
+(2) LeetCode -> 1482. Minimum Number of Days to Make m Bouquets
+    https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
