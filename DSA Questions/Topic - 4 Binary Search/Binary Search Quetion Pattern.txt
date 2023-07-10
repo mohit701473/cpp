@@ -1,0 +1,18 @@
+Pattern Of Question on Binary Search
+
+(1) Binary Search on 1D Array
+    Type -> 1: BS on Sorted Array 
+            Questions -> Search key, Lower & Upper Bound, Floor & Ceil, Search insert Position, Peak Element,
+                         first & last Position, count element frequency, Single Element in Sorted Array
+
+    Type -> 2: BS on Rotated Array
+            Questions -> Search Key index or key in rotataed Array, Search Key index or key in rotataed Array 
+            When Duplicate element present, Find min & max in rotataed array, Find how many time array is Rotated
+
+(2) Binary Search on Answer
+    Type -> 1: Find Min & MAx in a range
+            Questions -> Find Qqure Root, Find Nth Root of M, Koko Eating Banana, Minimum Days to Make M bouquets, 
+            Find the Smallets Divisor, Capacity to Ship Packages within D days, Kth Misisng no.(this is quite Different)
+
+    Type -> 2: Min of Max or Max of Min
+            Questions -> Aggressive Cows
