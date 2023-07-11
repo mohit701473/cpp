@@ -47,3 +47,55 @@ class Solution
         return low ;
     }
 };
+
+
+
+
+
+
+// Approch -> 1: Binary Search
+// T.C. = O(N * log(sum - max))
+// S.C. = O(1)
+class Solution 
+{
+    pair<int, int> getMaxAndSumOfArray(int A[], int N){
+        int maxi = INT_MIN, sum = 0 ;
+        for(int i=0 ; i<N ; i++){
+            int it = A[i] ;
+            maxi = max(maxi, it) ;
+            sum += it ;
+        }
+
+        return {maxi, sum} ;
+    }
+    
+    int isPossibleAlloction(int A[], int N, int mid){
+        int studentCnt = 0, pageSum = 0 ;
+        for(int i=0 ; i<N ; i++){
+            pageSum += A[i] ;
+            if(pageSum > mid){
+                pageSum = A[i] ;
+                studentCnt++ ;
+            }
+        }
+        studentCnt++ ;
+        return studentCnt ;
+    }
+    
+    public:
+    int findPages(int A[], int N, int M) 
+    {
+        
+        if(M > N) return -1 ;
+        pair<int, int> p = getMaxAndSumOfArray(A, N) ;
+        
+        int low = p.first, high = p.second ;
+        while(low <= high){
+            int mid = low + (high-low)/2 ;
+            int stdudentCount = isPossibleAlloction(A, N, mid) ;
+            if(stdudentCount > M) low = mid +1 ;
+            else high = mid-1 ;
+        }
+        return low ;
+    }
+};
