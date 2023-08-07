@@ -1,3 +1,19 @@
 (1) LeetCode -> 151. Reverse Words in a String
     https://leetcode.com/problems/reverse-words-in-a-string/description/
     D:\cpp\DSA Questions\Topic - 5 String\Basic and Easy Problem on String\Que2_reverseWordInAString.cpp
+
+(2) LeetCode -> 796. Rotate String
+    https://leetcode.com/problems/rotate-string/description/
+    D:\cpp\DSA Questions\Topic - 5 String\Basic and Easy Problem on String\Que6_rotateString.cpp
+
+(3) LeetCode -> 451. Sort Characters By Frequency
+    https://leetcode.com/problems/sort-characters-by-frequency/description/
+    D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que1_sortCharacterByFrequency.cpp
+
+(4) LeetCode -> 1614. Maximum Nesting Depth of the Parentheses
+    https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
+    D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que2_maximumNestingDepth.cpp
+
+(5) LeetCode -> 8. String to Integer (atoi)
+    https://leetcode.com/problems/string-to-integer-atoi/description/
+    D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que4_stringToInteger.cpp
