@@ -125,6 +125,7 @@ at most k characters and then subtract it from all subtrings having at most k-1 
 // S.C. = O(1)
 class Solution
 {
+    // This function wiil return the count of all substrings which have at most K distinct characters
      long long ok(string &s, int k, int n)
     {
        int i=0, j=0;

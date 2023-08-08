@@ -28,3 +28,8 @@ V.V.M.I.
     https://practice.geeksforgeeks.org/problems/count-number-of-substrings4528/1
     D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\que6_countSubstringWithExatlyKDistinctCharacter.cpp
 
+Same as 7
+(8) GFG -> GFG -> Count Substring
+    https://practice.geeksforgeeks.org/problems/count-substring/1
+    D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que7_countSubstrings.cpp
+
