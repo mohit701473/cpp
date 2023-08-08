@@ -17,3 +17,7 @@
 (5) LeetCode -> 8. String to Integer (atoi)
     https://leetcode.com/problems/string-to-integer-atoi/description/
     D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que4_stringToInteger.cpp
+
+(6) LeetCode -> 1781. Sum of Beauty of All Substrings
+    https://leetcode.com/problems/sum-of-beauty-of-all-substrings/description/
+    D:\cpp\DSA Questions\Topic - 5 String\Medium String Problems\Que5_sumOfBeautyOfAllSubtring.cpp
