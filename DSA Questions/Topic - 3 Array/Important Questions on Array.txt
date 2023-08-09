@@ -1,0 +1,25 @@
+-------------------------------------   Important Questions on 2D Array   ----------------------------------------
+(1) LeetCode -> 54. Spiral Matrix
+    https://leetcode.com/problems/spiral-matrix/description/
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que1_spiralPrint.cpp
+
+(2) LeetCode -> 48. Rotate Image
+    https://leetcode.com/problems/rotate-image/
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que2_rotateMatrixBy90.cpp
+
+(3) LeetCode -> Binary Search on 2D Array
+    https://leetcode.com/problems/search-a-2d-matrix/description/
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que4_binarySearchOn2DArray.cpp
+
+IMP
+(4) LeetCode -> 73. Set Matrix Zeroes
+    https://leetcode.com/problems/set-matrix-zeroes/
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que3_setMatrixToZero.cpp
+
+IMP
+(5) GFG -> Median in a row-wise sorted Matrix
+    https://practice.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que5_medianOfARowWiseSortedMatrix.cpp
+
+
+
