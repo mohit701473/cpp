@@ -21,5 +21,7 @@ IMP
     https://practice.geeksforgeeks.org/problems/median-in-a-row-wise-sorted-matrix1527/1
     D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que5_medianOfARowWiseSortedMatrix.cpp
 
-
-
+IMP
+(6) GFG -> Max rectangle
+    https://practice.geeksforgeeks.org/problems/max-rectangle/1
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que7_maximumRectangleArea.cpp
