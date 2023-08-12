@@ -33,6 +33,7 @@ public:
         int start = 1 , end = 2000 ;
         
         // 1st binary search to get assumed medain
+        // This loop will run at max 32 times
         while(start <= end){
             
             int assumedMedian = start + (end - start)/2 ;

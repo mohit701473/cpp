@@ -25,3 +25,8 @@ IMP
 (6) GFG -> Max rectangle
     https://practice.geeksforgeeks.org/problems/max-rectangle/1
     D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que7_maximumRectangleArea.cpp
+
+(7) Coding Ninja -> Common Elements Present In All Rows Of Matrix
+    https://www.codingninjas.com/studio/problems/common-elements-present-in-all-rows-of-a-matrix_1118111
+    D:\cpp\DSA Questions\Topic - 3 Array\2D Arrays\Que8_commonElementPresentInAllRows.cpp
+
