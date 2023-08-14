@@ -13,7 +13,7 @@ class Solution{
         for(int i=0 ; i<matrix.size() ; i++){
             int start = 0 , end = matrix[i].size() - 1 ;
             
-            // 2nd binary search to find teh no. of element lesser then assumedMedain in a i-th row
+            // 2nd binary search to find the no. of element lesser then assumedMedain in a i-th row
             while(start <= end){
                 int mid = start + (end - start)/2 ;
                 
