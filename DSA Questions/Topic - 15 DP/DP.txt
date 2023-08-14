@@ -1,0 +1,55 @@
+(1) What is Dynamic Programming(DP) ?
+ans. -> Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution 
+        that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to 
+        simply store the results of subproblems, so that we do not have to re-compute them when needed later. 
+        This simple optimization reduces time complexities from exponential to polynomial.
+
+(2) When are we use Dynamic Programmin ? 
+ans. -> When resursive solution of any problem have overlaping subproblems.
+        overlaping subproblems -> repeated calls for same inputs.
+        Generaly question asking count ways or their is multiple ways to solve the problem and in question you have 
+        to find minimum or maximum something bcz these types of questions solve using recursion and 
+
+    (2.a) When we apply recursion ?
+    ans. -> when situation of Try All The Possible Ways and in this count ways or best(max or min) occurs then we 
+            apply recursion
+
+
+(3) Why are we using DP ?
+ans. -> DP reduce the Time Complexity.
+        Ex. -> recursive solution of nth Fibonacci no. have 2^n T.C. But DP reduce to it in O(N).
+
+(4) No. of approchs in Dp.
+ans. -> Their are two types of approch uses in DP
+        (i) Top-Down Approch(Recursive + Memoization)
+        (ii) Bottom-Up Approch(Tabulation Method) 
+
+(5) Memoization(Top-Down Approch) -> In this approch we use a map, table or array to store the result of subproblems
+    so that when the next time same subproblem is called we don't need to compute this subproblem rather than we 
+    return the result stored in DP data structure(map, table or array).
+
+    Steps to convert Resursive Solution into Memoization
+        step -> 1: Declear a DP array, table or map.
+        step -> 2: In the resursive function before the returning the result of teh subproble store this result in 
+                   DP data structure.
+        step -> 3: In recursive function after the base case check if this subproblem is previously computed or not
+                   if computed then return directly stored result else compute it.
+
+
+(6) Tabulation Method(Bottom-Up Approch) -> Bottom-Up approch means we start from base case(bottom cases) and solve 
+    subproblems to reach the final subproblme. You start by filling up a table and then figure out the solution to the 
+    problem based on the result on the table.
+
+    Steps to convert Recursive Solution into Tabulation
+        step -> 1: Create a DP data structure(map, table or array)
+        step -> 2: Analyse the base cases of recursive function and by this fill DP data structure.
+        step -> 3: Apply loop to get the final result.
+
+
+(7) Space optimization -> In the Tabulation Approch, check that subprobles ka result kis pr denend kr rha h if it
+    denend only one, two or three variable thne we can apply Space Optimization Method such thak take some variable
+    according to the subprobles dependency and use them. If subproblems result depend on lots of variables then we
+    can't use Space Optimization Method.
+
+               
+
