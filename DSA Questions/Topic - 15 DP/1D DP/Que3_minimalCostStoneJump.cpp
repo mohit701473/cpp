@@ -90,8 +90,8 @@ int solve(int n, int k, vector<int> &height, vector<int> &dp){
     }
 
     // sgtep -> 2: store the result of subproblem into dp array
-    dp[n] = ans ;
-    return dp[n] ;
+    dp[n] = ans ; // here dp[n] denoting that to reach nth stone what is the minimum cost or 
+    return dp[n] ; // nth stone pr pahunchne ki minimum cost = dp[n]
 }
 
 int minimizeCost(int n, int k, vector<int> &height){
@@ -114,11 +114,13 @@ int minimizeCost(int n, int k, vector<int> &height){
     dp[0] = 0 ;
 
     // step -> 3: use of loop
-    for(int i=1 ; i<n ; i++){
+    for(int i=1 ; i<n ; i++){ // here i deonote the stone no. i.e. konse stone pr pahunchna h
         int ans = INT_MAX ;
 
+        // by this for loop we are trying all possible ways to reach i-th stone 
+        // jese ki me i-th stone pr kese aa skta hu we can reach i-th stone from (i-j)th stone 
         for(int j=1 ; j<=k && i-j >=0 ; j++){
-            int cost = dp[i-j] + abs(height[i] - height[i-j]) ;
+            int cost = dp[i-j] + abs(height[i] - height[i-j]) ; // dp[i-j] yah (i-j)th tak pahunchne ki minimum cost bta rha h 
 
             ans = min(ans, cost) ;
         }

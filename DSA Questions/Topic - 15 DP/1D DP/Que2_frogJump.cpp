@@ -2,6 +2,26 @@
 https://www.codingninjas.com/studio/problems/frog-jump_3621012?utm_source=striver&utm_medium=website&utm_campaign=a_zcoursetuf&leftPanelTab=0
 
 
+/*
+Que. -> 1: Why we can't apply greedy approch here ?
+ans. -> we can't use greedy approch heare bcz jb hum next optimal solution ki tarf badte hai greedy approch se to 
+        is beech hum bhut se ese solution ko miss kr denge jo hume global optimal solution dete ho.
+
+        Ex. -> heights = {30, 10, 60, 10, 60, 50} 0-base index
+        By the greedy approch 1st jump to 1st idx bcz abs(10-30) < abs(60-30) so energy require => 20
+        2nd jump from 1st idx to 3rd idx bcz abs(10-10) = 0 
+        3rd jump from 3rd idx to 5th idx bcz abs(50-10) = 40 
+        total energy require = 20 + 0 + 40 => 60
+
+        but the ans is => 40 
+        1st jump from 0th idx to 2nd idx, energy required => 60-30 => 30 
+        2nd jump from 2nd idx to 4th idx, energy required => 60-60 => 0
+        3nd jump from 4nd idx to 5th idx, energy required => abs(50-60) => 10
+        total energy require = 30 + 0 + 10 => 40
+*/  
+
+
+
 
 // Approch 1: Recursive Approch(bottum-Up Recursive Tree)
 /*
