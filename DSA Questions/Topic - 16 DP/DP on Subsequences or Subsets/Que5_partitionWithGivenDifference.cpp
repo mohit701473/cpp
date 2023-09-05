@@ -1,4 +1,4 @@
-// Coding Ninja -> Count Subsets with Sum K
+// Coding Ninja -> partitions-with-given-difference
 https://www.codingninjas.com/studio/problems/partitions-with-given-difference_3751628
 
 
@@ -141,5 +141,6 @@ int countPartitions(int n, int d, vector<int> &arr) {
 	
     return solveTab(arr, k) ;
 }
+
 
 
