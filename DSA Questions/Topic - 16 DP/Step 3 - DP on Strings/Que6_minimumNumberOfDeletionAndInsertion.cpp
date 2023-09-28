@@ -13,7 +13,7 @@ int longestCommonSubsequence(string &text1, string &text2) {
 
         // Base cases 
         for(int j=0 ; j <= n2 ; j++) dp[0][j] = 0 ;
-        for(int i=0 ; i <= n1 ; i++) dp[i][0] = 0 ;
+        for(int i=0 ; i <= n1 ; i++) dp[i][0] = 0 ;/
 
         // nestde loops
         for(int i=1 ; i <= n1 ; i++){
