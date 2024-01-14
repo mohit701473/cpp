@@ -9,3 +9,4 @@ step -> 2: Do all possible stuffs on that index according to the problem stateme
 step -> 3: sum up all sutffs -> if question says count all ways 
            take minimum of all stuffs -> if question says find minimum
            take maximum of all stuffs -> if question says find maximum
+
